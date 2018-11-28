@@ -6,6 +6,8 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Aaron Wilkin, their colleagues, and Loki Strain.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+import rosegraphics as rg
+
 ###############################################################################
 # DONE: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
@@ -25,13 +27,18 @@ def main():
     TESTS the functions that you will write below.
     You write the tests per the _TODO_s below.
     """
-print('We are testing functions, this is a hypotanuse calculator')
-print('A 345 triangle should send back a hype of 5')
-hype(3,4)
-hype(3.55,6.88)
+    print('We are testing functions, this is a hypotanuse calculator')
+    print('A 345 triangle should send back a hype of 5')
+    print(hype(3, 4))
+    print('Now we expect 9.36')
+    print(hype(3.55,8.66))
+    turts(5,'blue')
+
+
+
 
 ###############################################################################
-# TODO: 3a.  Define a function immediately below this _TODO_.
+# DONE: 3a.  Define a function immediately below this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
@@ -39,17 +46,18 @@ hype(3.55,6.88)
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 3b.  In main, CALL your function and print the returned value,
+# DONE: 3b.  In main, CALL your function and print the returned value,
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
 def hype(l,h):
-    print((l**2+h**2)**(1/2))
-    return
+    c = (l**2+h**2)**(1/2)
+    return c
+
 
 
 ###############################################################################
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# DONE: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
@@ -71,14 +79,24 @@ def hype(l,h):
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+# DONE: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 #
 ###############################################################################
+def turts(size,color):
+    window = rg.TurtleWindow()
+    hans = rg.SimpleTurtle('arrow')
+    gruber = rg.SimpleTurtle('classic')
+    hans.pen = rg.Pen('green', size)
+    gruber.pen = rg.Pen(color, 5)
+    hans.forward(100)
+    gruber.backward(100)
+    window.close_on_mouse_click()
+
 
 
 ###############################################################################
-# TODO: 5.
+# DONE: 5.
 #   COMMIT-and-PUSH your work (after changing this TO-DO to DONE).
 #
 #   As a reminder, here is how you should do so:
