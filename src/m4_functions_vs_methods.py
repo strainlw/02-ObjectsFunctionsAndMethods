@@ -29,8 +29,8 @@ def main():
     window = rg.TurtleWindow()
 
     run_example()
-    try_methods()
-    try_functions()
+    try_methods(150,90,50,100)
+    try_functions(200,100,300,30,100,200,0,0,-50,50,100,100)
     try_methods_and_functions()
 
     window.close_on_mouse_click()
@@ -98,7 +98,7 @@ def draw_many_squares(my_turtle, number_of_squares, size, twist):
         my_turtle.left(twist)
 
 ###############################################################################
-# TODO: 3.
+# DONE: 3.
 #   There are four FUNCTIONS defined ABOVE this:
 #     main
 #     run_example
@@ -125,7 +125,16 @@ def draw_many_squares(my_turtle, number_of_squares, size, twist):
 ###############################################################################
 
 
-def try_methods():
+def try_methods(f1,t1,f2,b1):
+    jacky = rg.SimpleTurtle('square')
+    jacky.speed=5
+    jacky.pen=rg.Pen('brown',5)
+    jacky.forward(f1)
+    jacky.left(t1)
+    jacky.forward(f2)
+    jacky.backward(b1)
+
+
     """
     Constructs a SimpleTurtle and sets its   pen   to a new rg.Pen
     that is 'brown' with thickness 5.
@@ -136,7 +145,7 @@ def try_methods():
       -- backward  100 units
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function, per its doc-string above.
+    # DONE: 4. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
     ###########################################################################
 
@@ -144,7 +153,30 @@ def try_methods():
 ###############################################################################
 # IMPORTANT: Read the NOTE below before you try to implement the next function!
 ###############################################################################
-def try_functions():
+def try_functions(ax1,ay1,ax2,ay2,bx1,by1,bx2,by2,cx1,cy1,cx2,cy2):
+    a = rg.SimpleTurtle()
+    b = rg.SimpleTurtle()
+    c = rg.SimpleTurtle()
+
+    a.speed = b.speed = c.speed = 5
+    a.pen = b.pen = c.pen = rg.Pen('black',10)
+
+    a.pen_up()
+    b.pen_up()
+    c.pen_up()
+    a.go_to(rg.Point(ax1,ay1))
+    b.go_to(rg.Point(bx1,by1))
+    c.go_to(rg.Point(cx1,cy1))
+    a.pen_down()
+    b.pen_down()
+    c.pen_down()
+    a.go_to(rg.Point(ax2,ay2))
+    b.go_to(rg.Point(bx2,by2))
+    c.go_to(rg.Point(cx2,cy2))
+
+
+
+
     """
     Causes several SimpleTurtles to do the following:
      -- One jumps to (200, 100), then moves (while drawing) to (300, 30)
@@ -152,7 +184,7 @@ def try_functions():
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
     ###########################################################################
-    # TODO: 5. Implement and test this function, per its doc-string above.
+    # DONE: 5. Implement and test this function, per its doc-string above.
     #   The testing code (in main) is already written for you.
     #
     #    NOTE: This function requires
